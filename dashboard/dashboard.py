@@ -90,5 +90,5 @@ elif analysis_type == "Hourly Patterns":
     st.pyplot(fig)
 
 # Footer
-st.write("### Developed by: [Your Name]")
+st.write("### Developed by: Bernadetta Sri Endah")
 
