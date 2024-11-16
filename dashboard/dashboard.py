@@ -3,11 +3,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 st.title("Bike Sharing Analysis Dashboard")
 
-day_data = pd.read_csv("day.csv")
-hour_data = pd.read_csv("hour.csv")
+# Mendapatkan path absolut dari file dataset
+base_dir = os.path.dirname(os.path.abspath(__file__))
+day_csv_path = os.path.join(base_dir, "day.csv")
+hour_csv_path = os.path.join(base_dir, "hour.csv")
+
+# Membaca dataset
+day_data = pd.read_csv(day_csv_path)
+hour_data = pd.read_csv(hour_csv_path)
 
 day_data['dteday'] = pd.to_datetime(day_data['dteday'])
 hour_data['dteday'] = pd.to_datetime(hour_data['dteday'])
